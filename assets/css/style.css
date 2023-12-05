@@ -106,20 +106,39 @@ main{
     }
 }
 
+/* UPGRADE BAR */
+#upgrade{
+    height: 60px;
+    /* width: 90%; */
+    background-color: rgba(18, 19, 24, 0.8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 180px;
+    z-index: 1;
+}
+#upgrade a{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 1px solid white;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+@media screen and (max-width: 576px) {
+    #upgrade{
+        left: 48px;
+}
+}
+
 /* --- CENTRAL --- */
 #central{
     background-color: #1C1F26;
     height: 100vh;
     flex-grow: 1;
 }
-#upgrade{
-    height: 60px;
-    width: 100%;
-    background-color: rgba(18, 19, 24, 0.8);
-    position: fixed;
-    top: 0;
-    z-index: 1;
-}
+
+/* FOOTER */
 footer{
     background-color: #2C2C2C;
     height: 60px;
