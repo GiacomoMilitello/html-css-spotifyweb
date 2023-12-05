@@ -52,8 +52,15 @@ main{
     /* margin: 15px; */
     display: flex;
 }
+#nav > :first-child > :first-child{
+    display: none;
+}
 #nav img{
     width: 100px;
+}
+/* guardare lezione per vedere come si comporta a 350height */
+#nav > :nth-child(3){
+    overflow-y: auto;
 }
 #nav > :last-child{
     position: fixed;
@@ -65,6 +72,38 @@ main{
 }
 #nav > :last-child > :last-child span{
     width: ;
+}
+/* --- NAV MOBILE VERSION --- */
+@media screen and (max-width: 576px) {
+    #nav{
+        width: 48px;
+    }
+    #nav > :first-child > :first-child{
+        display: inline-block;
+        width: 18px;
+    }
+    #nav > :first-child > :nth-child(2){
+        display: none;
+    }
+    #nav > div{
+        display: none;
+    }
+    #nav ul li span{
+        display: none;
+    }
+    #nav svg{
+        margin-block: 4.2px;
+    }
+    #nav > :last-child{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+    }
+    #nav > :last-child > :first-child{
+        border-bottom: none;
+    }
 }
 
 /* --- CENTRAL --- */
