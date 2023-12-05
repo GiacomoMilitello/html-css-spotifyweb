@@ -33,6 +33,12 @@ main{
     display: flex;
 }
 /* svg color */
+.link-svg{
+    fill: #787878;
+}
+/* .link-svg :hover{
+    fill: white;
+} */
 .white-svg{
     fill: white;
 }
@@ -47,6 +53,13 @@ main{
     flex-direction: column;
     gap: 15px;
 }
+#nav ul li a{
+    color: #787878;
+}
+/* #nav a :hover{
+    color: white;
+    fill: white;
+} */
 #nav > :first-child{
     width: 100px;
     /* margin: 15px; */
@@ -124,6 +137,7 @@ main{
     border: 1px solid white;
     padding: 5px 20px;
     border-radius: 20px;
+    font-size: 85%;
 }
 @media screen and (max-width: 576px) {
     #upgrade{
@@ -145,4 +159,69 @@ footer{
     width: 100vw;
     position: fixed;
     bottom: 0;
+    display: flex;
+    justify-content: space-between;
 }
+.play-bar{
+    width: 60%;
+    background-color: #787878;
+    height: 5px;
+    border-radius: 2px;
+}
+.viewed{
+    width: 20%;
+    height: 100%;
+    background-color: white;
+    border-radius: 2px;
+}
+#foot-left{
+    display: flex;
+    height: 100%;
+    padding: 5px;
+    width: 15%;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+#foot-left > :first-child{
+    display: flex;
+    gap: 5px;
+}
+#foot-left img{
+    width: 45px;
+    display: block;
+}
+
+#foot-central{
+    height: 100%;
+    width: 50%;
+    padding: 5px;
+}
+#upper-central{
+    display: flex;
+    width: 100%;
+    height: 60%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px
+    ;
+}
+#lower-central{
+    display: flex;
+    width: 100%;
+    height: 40%;
+    align-items: center;
+    justify-content: center;
+    gap: 25px
+    ;
+}
+
+#foot-right{
+    display: flex;
+    height: 100%;
+    padding: 5px;
+    width: 15%;
+    gap: 10px;
+    align-items: center;
+}
+
