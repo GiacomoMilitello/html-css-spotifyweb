@@ -3,38 +3,86 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    color: white;
+    font-family: sans-serif;
+    line-height: 160%;
+    font-size: 85%;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+ul{
+    list-style: none;
+    line-height: 180%;
+}
+ul li *{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 body{
     width: 100vw;
     height: 100vh;
     position: relative;
 }
 main{
-    background-color: lightblue;
+    background-color: black;
     height: 100vh;
     display: flex;
 }
-#nav{
-    border: 1px dashed red;
-    width: 150px;
-    height: 100vh;
-    padding-bottom: 60px;
+/* svg color */
+.white-svg{
+    fill: white;
 }
+
+/* --- NAV --- */
+#nav{
+    width: 180px;
+    height: 100vh;
+    /* padding-bottom: 60px; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#nav > :first-child{
+    width: 100px;
+    /* margin: 15px; */
+    display: flex;
+}
+#nav img{
+    width: 100px;
+}
+#nav > :last-child{
+    position: fixed;
+    bottom: 70px;
+    width: 150px;
+}
+#nav > :last-child > :first-child{
+    border-bottom: 1px solid white;
+}
+#nav > :last-child > :last-child span{
+    width: ;
+}
+
+/* --- CENTRAL --- */
 #central{
-    border: 1px solid green;
-    background-color: aquamarine;
+    background-color: #1C1F26;
     height: 100vh;
     flex-grow: 1;
 }
 #upgrade{
     height: 60px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(18, 19, 24, 0.8);
     position: fixed;
     top: 0;
     z-index: 1;
 }
 footer{
-    background-color: gray;
+    background-color: #2C2C2C;
     height: 60px;
     width: 100vw;
     position: fixed;
