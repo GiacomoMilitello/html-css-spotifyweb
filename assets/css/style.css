@@ -92,18 +92,18 @@ main{
     #nav{
         width: 48px;
     }
-    .white-logo{
+    /* .white-logo{
         fill: white;
-    }
-    #nav > :first-child > :first-child{
+    } */
+    #nav > :first-child > :first-child > :first-child{
         display: inline-block;
         width: 18px;
     }
 
-    #nav > :first-child > :nth-child(2){
+    #nav > :first-child > :first-child > :nth-child(2){
         display: none;
     }
-    #nav > div{
+    #nav > :first-child > div{
         display: none;
     }
     #nav ul li span{
