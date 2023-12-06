@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* border: 1px dashed white; */
 }
 html{
     color: white;
@@ -12,6 +13,10 @@ html{
 a{
     text-decoration: none;
     color: white;
+    opacity: 0.5;
+}
+a:hover{
+    opacity: 1;
 }
 ul{
     list-style: none;
@@ -28,17 +33,14 @@ body{
     position: relative;
 }
 main{
-    background-color: black;
+    background-color: white;
     height: 100vh;
     display: flex;
 }
-/* svg color */
+/* - svg color - */
 .link-svg{
     fill: #787878;
 }
-/* .link-svg :hover{
-    fill: white;
-} */
 .white-svg{
     fill: white;
 }
@@ -52,47 +54,52 @@ main{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background-color: black;
+    padding-bottom: 70px;
+    justify-content: space-between;
 }
-
-/* #nav a :hover{
-    color: white;
-    fill: white;
-} */
 #nav > :first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#nav > :first-child > :first-child{
     width: 100px;
     /* margin: 15px; */
     display: flex;
 }
-#nav > :first-child > :first-child{
+#nav > :first-child > :first-child > :first-child{
     display: none;
 }
 #nav img{
     width: 100px;
 }
 /* guardare lezione per vedere come si comporta a 350height */
-#nav > :nth-child(3){
+.nav-overflow{
     overflow-y: auto;
 }
+/* sistemare overflow */
 #nav > :last-child{
-    position: fixed;
-    bottom: 70px;
+    /* position: fixed;
+    bottom: 70px; */
     width: 150px;
 }
 #nav > :last-child > :first-child{
     border-bottom: 1px solid white;
 }
-#nav > :last-child > :last-child span{
-    width: ;
-}
-/* --- NAV MOBILE VERSION --- */
+/* --- NAV EXTRA SMALL VERSION --- */
 @media screen and (max-width: 576px) {
     #nav{
         width: 48px;
+    }
+    .white-logo{
+        fill: white;
     }
     #nav > :first-child > :first-child{
         display: inline-block;
         width: 18px;
     }
+
     #nav > :first-child > :nth-child(2){
         display: none;
     }
@@ -117,7 +124,7 @@ main{
     }
 }
 
-/* UPGRADE BAR */
+/* --- UPGRADE BAR --- */
 #upgrade{
     height: 60px;
     /* width: 90%; */
@@ -125,8 +132,7 @@ main{
     position: fixed;
     top: 0;
     right: 0;
-    left: 130px;
-    /* controllare errore 180pxnavwidth e border top di navlilastchild */
+    left: 180px;
     z-index: 1;
 }
 #upgrade a{
@@ -138,6 +144,10 @@ main{
     border-radius: 20px;
     font-size: 85%;
 }
+#upgrade a:hover{
+    font-size: 100%;
+}
+/* --- UPGRADE BAR EXTRA SMALL VERSION --- */
 @media screen and (max-width: 576px) {
     #upgrade{
         left: 48px;
@@ -146,9 +156,12 @@ main{
 
 /* --- CENTRAL --- */
 #central{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 180px;
     background-color: #1C1F26;
     height: 100vh;
-    flex-grow: 1;
     padding-top: 70px;
     overflow: auto;
     display: flex;
@@ -162,9 +175,7 @@ main{
     align-items: center;
     justify-content: center;
     gap: 25px;
-}
-#central ul li a{
-    color: #787878;
+    flex-wrap: wrap;
 }
 .playlists{
     display: flex;
@@ -184,6 +195,22 @@ main{
 }
 .album figure{
     width: 100%;
+    position: relative;
+}
+.album figure:hover img{
+    opacity: 0.4;
+}
+.album figure:hover::before{
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9V168c0-8.7 4.7-16.7 12.3-20.9z" fill="white"/></svg>');
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25px, -25px);
+    height: 80%;
+    z-index: 1;
+    cursor: pointer;
 }
 .album figure img{
     width: 100%;
@@ -192,24 +219,34 @@ main{
 .album h4{
     text-align: center;
 }
+.album h4,
+.album span{
+    font-size: 90%;
+}
 #central > :last-child figure,
 #central > :last-child img{
     border-radius: 50%;
 }
-/* CENTRAL MEDIUM VERSION */
+/* --- CENTRAL MEDIUM VERSION --- */
 @media screen and (max-width: 992px) {
     .album {
         width: calc((100% / 4) - 10px);
     }
 }
-/* CENTRAL SMALL&EXTRA SMALL VERSION */
+/* --- CENTRAL SMALL VERSION --- */
 @media screen and (max-width: 768px) {
     .album {
         width: calc((100% / 2) - 10px);
     }
 }
+/* --- CENTRAL EXTRA SMALL VERSION --- */
+@media screen and (max-width: 576px) {
+    #central{
+        left: 48px;
+}
+}
 
-/* FOOTER */
+/* --- FOOTER --- */
 footer{
     background-color: #2C2C2C;
     height: 60px;
@@ -248,7 +285,15 @@ footer{
     width: 45px;
     display: block;
 }
-
+#foot-left > :first-child div{
+    line-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#foot-left > :first-child a:hover{
+    text-decoration: underline;
+}
 #foot-central{
     height: 100%;
     width: 50%;
@@ -260,8 +305,12 @@ footer{
     height: 60%;
     align-items: center;
     justify-content: center;
-    gap: 15px
-    ;
+    gap: 15px;
+}
+.bigger:hover{
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
 }
 #lower-central{
     display: flex;
@@ -269,10 +318,8 @@ footer{
     height: 40%;
     align-items: center;
     justify-content: center;
-    gap: 25px
-    ;
+    gap: 25px;
 }
-
 #foot-right{
     display: flex;
     height: 100%;
