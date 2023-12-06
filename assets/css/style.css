@@ -53,9 +53,7 @@ main{
     flex-direction: column;
     gap: 15px;
 }
-#nav ul li a{
-    color: #787878;
-}
+
 /* #nav a :hover{
     color: white;
     fill: white;
@@ -127,7 +125,8 @@ main{
     position: fixed;
     top: 0;
     right: 0;
-    left: 180px;
+    left: 130px;
+    /* controllare errore 180pxnavwidth e border top di navlilastchild */
     z-index: 1;
 }
 #upgrade a{
@@ -150,6 +149,64 @@ main{
     background-color: #1C1F26;
     height: 100vh;
     flex-grow: 1;
+    padding-top: 70px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-inline: 20px;
+    padding-bottom: 65px;
+}
+#central ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+#central ul li a{
+    color: #787878;
+}
+.playlists{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.playlists > h2,
+.playlists > span{
+    width: 100%;
+}
+.album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: calc((100% / 6) - 10px);
+}
+.album figure{
+    width: 100%;
+}
+.album figure img{
+    width: 100%;
+    display: block;
+}
+.album h4{
+    text-align: center;
+}
+#central > :last-child figure,
+#central > :last-child img{
+    border-radius: 50%;
+}
+/* CENTRAL MEDIUM VERSION */
+@media screen and (max-width: 992px) {
+    .album {
+        width: calc((100% / 4) - 10px);
+    }
+}
+/* CENTRAL SMALL&EXTRA SMALL VERSION */
+@media screen and (max-width: 768px) {
+    .album {
+        width: calc((100% / 2) - 10px);
+    }
 }
 
 /* FOOTER */
