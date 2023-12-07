@@ -49,7 +49,6 @@ main{
 #nav{
     width: 180px;
     height: 100vh;
-    /* padding-bottom: 60px; */
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -65,23 +64,36 @@ main{
 }
 #nav > :first-child > :first-child{
     width: 100px;
-    /* margin: 15px; */
     display: flex;
 }
 #nav > :first-child > :first-child > :first-child{
     display: none;
 }
+#nav > :first-child > :nth-child(2) > :first-child{
+    position: relative;
+}
+#vertical-line{
+    background-color: #CEFC5E;
+    height: 18px;
+    width: 2px;
+    position: absolute;
+    top: 4px;
+    left: -10px;
+}
+#nav > :first-child > :nth-child(3) a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 #nav img{
     width: 100px;
 }
-/* guardare lezione per vedere come si comporta a 350height */
 .nav-overflow{
-    overflow-y: auto;
+    height: 60%;
+    overflow: auto;
 }
 /* sistemare overflow */
 #nav > :last-child{
-    /* position: fixed;
-    bottom: 70px; */
     width: 150px;
 }
 #nav > :last-child > :first-child{
@@ -92,14 +104,10 @@ main{
     #nav{
         width: 48px;
     }
-    /* .white-logo{
-        fill: white;
-    } */
     #nav > :first-child > :first-child > :first-child{
         display: inline-block;
         width: 18px;
     }
-
     #nav > :first-child > :first-child > :nth-child(2){
         display: none;
     }
@@ -177,6 +185,16 @@ main{
     gap: 25px;
     flex-wrap: wrap;
 }
+#central ul > :first-child{
+    position: relative;
+}
+#central ul hr{
+    border: 1.5px solid #CEFC5E;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
 .playlists{
     display: flex;
     flex-wrap: wrap;
@@ -208,7 +226,6 @@ main{
     top: 50%;
     left: 50%;
     transform: translate(-25px, -25px);
-    height: 80%;
     z-index: 1;
     cursor: pointer;
 }
@@ -222,6 +239,9 @@ main{
 .album h4,
 .album span{
     font-size: 90%;
+}
+.album span{
+    opacity: 0.5;
 }
 #central > :last-child figure,
 #central > :last-child img{
@@ -256,17 +276,25 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+footer svg{
+    cursor: pointer;
+}
 .play-bar{
     width: 60%;
     background-color: #787878;
     height: 5px;
     border-radius: 2px;
+    cursor: pointer;
+    position: relative;
 }
 .viewed{
     width: 20%;
     height: 100%;
     background-color: white;
     border-radius: 2px;
+}
+.viewed:hover{
+    background-color: lightgreen;
 }
 #foot-left{
     display: flex;
@@ -280,6 +308,7 @@ footer{
 #foot-left > :first-child{
     display: flex;
     gap: 5px;
+    cursor: pointer;
 }
 #foot-left img{
     width: 45px;
@@ -328,4 +357,18 @@ footer{
     gap: 10px;
     align-items: center;
 }
-
+/* --- FOOTER SMALL VERSION --- */
+@media screen and (max-width: 768px) {
+    #foot-right > :nth-child(4){
+        display: none;
+    }
+}
+/* --- FOOTER EXTRA SMALL VERSION --- */
+@media screen and (max-width: 576px) {
+    #foot-left > :first-child > :nth-child(2){
+        display: none;
+    }
+    #foot-right > :nth-child(4){
+        display: none;
+    }
+}
